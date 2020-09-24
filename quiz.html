@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mon quiz</title>
+    <!-- import materialize css and js for ui -->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <nav>
+        <div class="nav-wrapper">
+            <a class="brand-logo" href="#">SuperForm</a>
+            <ul class="right hide-on-med-and-down" id="nav-mobile">
+                <li><a href="sass.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="row">
+        <div class="col s12">
+            <h1>Bienvenue sur le questionnaire</h1>
+            <p>Ce questionnaire a pour but de faire des statistique sur les développeurs</p>
+        </div>
+
+        <div class="col s6 offset-s2">
+
+            <!-- Support method get and post  -->
+            <form action="reponse.php" method="GET" name="quizz">
+
+
+                <div class="input-field">
+                    <input class="validate" id="prenom" name="prenom" pattern="[A-Za-z0-9]+" placeholder="Alice"
+                           required type="text">
+                    <label for="prenom">Prénom</label>
+                </div>
+                <div class="input-field">
+                    <input class="validate" id="nomdefamille" name="nom" pattern="[A-Za-z0-9]+" placeholder="Dupond"
+                           required type="text">
+                    <label for="nomdefamille">Nom</label>
+                </div>
+                <div class="input-field">
+                    <input class="validate" id="age" max="110" min="3" name="age" placeholder="26" required type="number">
+                    <label for="age">Age </label>
+                </div>
+
+                <div class="row">
+                    <div class="input-field">
+                        <input class="validate" id="email" name="email" placeholder="alice.dupond@gmail.com"
+                               required
+                               type="email">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label>Quel est votre date préféré ?</label>
+                    <input class="datepicker" name="date" required type="text">
+                </div>
+
+
+                <div class="row">
+                    <div class="input-field">
+                        <select id="selectedTest" name="status">
+                            <option selected value="none">Sélectionnez parmis les options suivantes</option>
+                            <option value="homme">Homme</option>
+                            <option value="femme">Femme</option>
+                            <option value="autre">Autre...</option>
+                        </select>
+                        <label for="selectedTest">Genre</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <h6>Language de programmation préféré</h6>
+
+                    <label>
+                        <input name="language" type="radio" value="java"/>
+                        <span>Java</span>
+                    </label>
+                    <label>
+                        <input name="language" type="radio" value="php"/>
+                        <span>PHP</span>
+                    </label>
+                    <label>
+                        <input name="language" type="radio" value="javascript"/>
+                        <span>JavaScript</span>
+                    </label>
+                    <label>
+                        <input name="language" type="radio" value="python"/>
+                        <span>Python</span>
+                    </label>
+                    <label>
+                        <input name="language" type="radio" value="c"/>
+                        <span>C</span>
+                    </label>
+
+                </div>
+                <div class="row">
+                    <p>Votre maitrise de ce language</p>
+                    <p class="range-field">
+                        <input id="test5" max="100" min="0" name="love" type="range"/>
+                    </p>
+                </div>
+
+                <div>
+                    <h6>Avez vous internet ?</h6>
+                    <p>
+                        <label>
+                            <input name="web" type="checkbox" value="yes"/>
+                            <span>Oui</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input name="web" type="checkbox" value="no"/>
+                            <span>Non</span>
+                        </label>
+                    </p>
+                </div>
+
+                <div class="row">
+                    <div class="switch">
+                        <label for="notify"> Receive email notifications </label>
+                        <label>
+                            Off
+                            <input name="notify" id="notify" type="checkbox">
+                            <span class="lever"></span>
+                            On
+                        </label>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <button class="btn waves-effect waves-light" name="action" type="submit">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+
+                    <a class="waves-effect waves-light btn"><i class="material-icons left">cancel</i>Reset</a>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/materialize.js"></script>
+<script>
+    // code pour materialize
+    $(document).ready(function () {
+        $("#slide-out").sidenav();
+        $("#selectedTest").formSelect();
+    });
+
+
+    $(document).ready(function () {
+        $('.datepicker').datepicker();
+    });
+
+
+</script>
+
+</body>
+
+</html>
